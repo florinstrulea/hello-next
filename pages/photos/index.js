@@ -5,7 +5,7 @@ import Link from "next/link";
 const Photos = ({ data }) => {
 	const listPhotos = data.slice(0, 10).map((photo) => {
 		return (
-			<div classname="item">
+			<div key={photo.id}>
 				<Link href={`/photos/${photo.id}`}>
 					<Image src={photo.download_url} width="600" height="400" />
 				</Link>

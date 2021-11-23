@@ -18,27 +18,27 @@ async function getPhoto(id) {
 	return json;
 }
 //SSG
-export async function getStaticPaths() {
-	return {
-		paths: [{ params: { id: "0" } }, { params: { id: "1" } }],
+// export async function getStaticPaths() {
+// 	return {
+// 		paths: [{ params: { id: "0" } }, { params: { id: "1" } }],
 
-		//Si fallback est à false, les seuls pages qui seront générés sont celles spécifiées dans le tableau paths
-		//Si fallback est à true même les pages qui ne sont pas spécifiées dans les paths seront générées en mode SSR
-		fallback: true,
-	};
-}
+// 		//Si fallback est à false, les seuls pages qui seront générés sont celles spécifiées dans le tableau paths
+// 		//Si fallback est à true même les pages qui ne sont pas spécifiées dans les paths seront générées en mode SSR
+// 		fallback: true,
+// 	};
+// }
 
-export async function getStaticProps({ params }) {
-	const data = await getPhoto(params.id);
-	return {
-		props: { data },
-	};
-}
-
-//SSR
-// export async function getServerSideProps({ params }) {
+// export async function getStaticProps({ params }) {
 // 	const data = await getPhoto(params.id);
 // 	return {
 // 		props: { data },
 // 	};
 // }
+
+//SSR
+export async function getServerSideProps({ params }) {
+	const data = await getPhoto(params.id);
+	return {
+		props: { data },
+	};
+}

@@ -23,6 +23,7 @@ export async function getStaticPaths() {
 		paths: [{ params: { id: "0" } }, { params: { id: "1" } }],
 
 		//Si fallback est à false, les seuls pages qui seront générés sont celles spécifiées dans le tableau paths
+		//Si fallback est à true même les pages qui ne sont pas spécifiées dans les paths seront générées en mode SSR
 		fallback: true,
 	};
 }

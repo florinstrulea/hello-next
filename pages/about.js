@@ -5,7 +5,7 @@ const About = () => {
 	return (
 		<div>
 			<p>Ceci est une page Next !</p>
-			<Link href="/">Retour à la page d'accueil</Link>
+			<Link href="/">Retour à la page d&apos;accueil</Link>
 		</div>
 	);
 };
